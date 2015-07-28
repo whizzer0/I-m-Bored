@@ -1,7 +1,6 @@
 body {
 	text-align: center;
-	background-color: #FAFAFF;
-	background-image: url("http://subtlepatterns.com/patterns/crossword.png");
+	background-image: url("http://subtlepatterns.com/patterns/geometry2.png");
 }
 
 h1 {
@@ -9,25 +8,13 @@ h1 {
 	color: #FF5252;
 	text-align: center;
 	font-size: 60px;
-	font-weight: bold;
 	position: relative;
     top: -10px;
 }
 
-
-.wrapper {
-	margin: 50px auto 0 auto;
-	width: 980px;
-	text-align: left;
-}
-
 .footer {
 	background-color: #FF5252;
-	border-left-color: #FF5252;
-	border-right-color: #FF5252;
-	border-top-color: #FF5252;
 	box-sizing: border-box;
-	color: #FF5252;
 	font-family: 'Open Sans', sans-serif;
 	font-size: 12px;
 	height: 48px;
@@ -39,7 +26,6 @@ h1 {
 	padding-left: 12px;
 	padding-right: 12px;
 	padding-top: 14px;
-	text-align: center;
 	width: 1285px;
 }
 
@@ -72,19 +58,19 @@ h2 {
     top: -15px;
 }
 
-.button-success,
-        .button-error,
-        .button-warning,
-        .button-secondary {
-            color: white;
-            border-radius: 4px;
-            text-shadow: 0 1px 1px rgba(0, 0, 0, 0.2);
-        }
-
-        .button-success {
-            background: #FF5252; /* this is a green */
-        }
+.button-success {
+    color: white;
+    border-radius: 4px;
+    text-shadow: 0 1px 1px rgba(0, 0, 0, 0.2);
+    background: #FF5252;
+}
 
 .buttontext {
+	font-family: 'Signika Negative', sans-serif;
+	position: relative;
+	right: 30px;
+}
+
+.search {
 	font-family: 'Signika Negative', sans-serif;
 }
