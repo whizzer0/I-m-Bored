@@ -3,7 +3,7 @@ from api import lookUpEventFul
 app = Flask(__name__)
 app.debug = True
 
-@app.route("/example", methods=["GET"])
+@app.route("/", methods=["GET"])
 def example():
     return render_template("example.html", data=None)
 
