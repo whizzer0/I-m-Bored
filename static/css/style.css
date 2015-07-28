@@ -1,0 +1,44 @@
+body {
+	text-align: center;
+}
+
+h1 {
+	font-family: 'Open Sans', sans-serif;
+	color: #7094FF;
+	font-size: 60px;
+	font-weight: bold;
+	line-height: 70px;
+	margin-bottom: 16px;
+	text-align: center;
+	display: inline-block;
+}
+
+.header {
+	background-attachment: scroll;
+	background-clip: border-box;
+	background-color: #7094FF;
+	background-image: none;
+	background-origin: padding-box;
+	background-size: auto;
+	color: rgb(34, 34, 34);
+	display: block;
+	height: 80px;
+	left: 0px;
+	line-height: 26px;
+	overflow-x: hidden;
+	overflow-y: hidden;
+	position: absolute;
+	right: 0px;
+	top: -30px;
+	width: 100%;
+	z-index: 11;
+	text-align: left;
+}
+
+.wrapper {
+	margin: 50px auto 0 auto;
+	width: 980px;
+	text-align: left;
+}
+	
+
