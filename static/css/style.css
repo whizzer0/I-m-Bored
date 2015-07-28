@@ -1,44 +1,90 @@
 body {
 	text-align: center;
+	background-color: #FAFAFF;
+	background-image: url("http://subtlepatterns.com/patterns/crossword.png");
 }
 
 h1 {
-	font-family: 'Open Sans', sans-serif;
-	color: #7094FF;
+	font-family: 'Signika Negative', sans-serif;
+	color: #FF5252;
+	text-align: center;
 	font-size: 60px;
 	font-weight: bold;
-	line-height: 70px;
-	margin-bottom: 16px;
-	text-align: center;
-	display: inline-block;
+	position: relative;
+    top: -10px;
 }
 
-.header {
-	background-attachment: scroll;
-	background-clip: border-box;
-	background-color: #7094FF;
-	background-image: none;
-	background-origin: padding-box;
-	background-size: auto;
-	color: rgb(34, 34, 34);
-	display: block;
-	height: 80px;
-	left: 0px;
-	line-height: 26px;
-	overflow-x: hidden;
-	overflow-y: hidden;
-	position: absolute;
-	right: 0px;
-	top: -30px;
-	width: 100%;
-	z-index: 11;
-	text-align: left;
-}
 
 .wrapper {
 	margin: 50px auto 0 auto;
 	width: 980px;
 	text-align: left;
 }
-	
 
+.footer {
+	background-color: #FF5252;
+	border-left-color: #FF5252;
+	border-right-color: #FF5252;
+	border-top-color: #FF5252;
+	box-sizing: border-box;
+	color: #FF5252;
+	font-family: 'Open Sans', sans-serif;
+	font-size: 12px;
+	height: 48px;
+	margin-bottom: 0px;
+	margin-left: -10px;
+	margin-right: 0px;
+	margin-top: -9px;
+	padding-bottom: 13px;
+	padding-left: 12px;
+	padding-right: 12px;
+	padding-top: 14px;
+	text-align: center;
+	width: 1285px;
+}
+
+h2 {
+    font-size: 16px;
+    color: #FFFFFF;
+    position: relative;
+    top: -14px;
+    font-family: 'Lato', sans-serif; font-weight: 300
+}
+
+.instructions {
+    font-family: 'Signika Negative', sans-serif;
+	color: #4D4C4C;
+	text-align: center;
+	font-size: 40px;
+	font-weight: bold;
+	position: relative;
+    top: -25px;
+}
+
+.smalltext {
+     font-family: 'Signika Negative', sans-serif;
+	color: #4D4C4C;
+	text-align: center;
+	font-weight: 100;
+	font-size: 20px;
+	font-weight: bold;
+	position: relative;
+    top: -15px;
+}
+
+.button-success,
+        .button-error,
+        .button-warning,
+        .button-secondary {
+            color: white;
+            border-radius: 4px;
+            text-shadow: 0 1px 1px rgba(0, 0, 0, 0.2);
+        }
+
+        .button-success {
+            background: #FF5252; /* this is a green */
+        }
+
+.buttontext {
+	font-family: 'Signika Negative', sans-serif;
+}
