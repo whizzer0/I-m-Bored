@@ -6,27 +6,32 @@
 import requests
 import xml.etree.ElementTree as ET
 
-#declaring a new variable that holds a date that is formatted to the api's requirements
-date = '2015072800-2015080100'
-#declaring a new variable that holds the api key above
-api = 'qgdXKCNgnfsLPLJ7'
-#we need a variable that holds a string containting the location we want to search from (SEE THE DOCUMENTATION ON THE WEBSITE FOR THE FORMAT)
-location = 'Norwich, United Kingdom'
-#we need a variable that holds a integer page_size that is the maximum number of results to be returned
-result_number = 54
-base_url = 'http://api.eventful.com/rest/events/search'
-request_parameters = {
-	'app_key': api,
-	'date': date,
-	'location': location,
-	'page_size': result_number 
-}
-r = requests.get(base_url,params = request_parameters)
+def lookUpEventFul(location):
+	#declaring a new variable that holds a date that is formatted to the api's requirements
+	date = '2015072800-2015080100'
+	#declaring a new variable that holds the api key above
+	api = 'qgdXKCNgnfsLPLJ7'
+	
+	#we need a variable that holds a string containting the location we want to search from (SEE THE DOCUMENTATION ON THE WEBSITE FOR THE FORMAT)
+	#location = 'Norwich, United Kingdom'
+	#we need a variable that holds a integer page_size that is the maximum number of results to be returned
+	result_number = 54
+	base_url = 'http://api.eventful.com/rest/events/search'
+	request_parameters = {
+		'app_key': api,
+		'date': date,
+		'location': location,
+		'page_size': result_number 
+	}
+	r = requests.get(base_url,params = request_parameters)
+
+	#the following line may strip non-ASCII characters (for XML parser compatibility) and hence may be the cause of some problems with missing characters
+	response = r.text.encode('ascii', 'ignore')
+	root = ET.fromstring(response)
+
+	return root
 
 
-#the following line may strip non-ASCII characters (for XML parser compatibility) and hence may be the cause of some problems with missing characters
-response = r.text.encode('ascii', 'ignore')
-root = ET.fromstring(response)
 '''
 <title>Guildhall Tours</title>
 <url>http://eventful.com/norwich/events/guildhall-tours-/E0-001-083428214-5@2015073110?utm_source=apis&amp;utm_medium=apim&amp;utm_campaign=apic</url>
@@ -90,7 +95,7 @@ root = ET.fromstring(response)
 <groups/>
 '''
 
-for event in root.iter('events'):
-	for node in event:
-		#this is outpi=utting the <title> element
-		print node.tag, node.attrib, node.find('title').text, 
+#for event in root.iter('events'):
+#	for node in event:
+#		#this is outpi=utting the <title> element
+#		print node.tag, node.attrib, node.find('title').text, 

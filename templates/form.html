@@ -20,12 +20,11 @@
     </style>
     </div>
     <br>
-    <form action="#">
-    <p><label for="pcode">Postal code</label> <input type="text" id="pcode" /></p>
-    <form action="#">
-    <p><label for="town">Your town</label> <input type="text" id="town" /></p>
-    <button class="buttontext">Search for events!</button>
-
+    <form action="/results" method="POST">
+    <p><label for="pcode">Postal code</label> <input type="text" name="pcode" /></p>
+    <p><label for="town">Your town</label> <input type="text" name="town" /></p>
+    <button class="buttontext" type="submit">Search for events!</button>
+	</form>
 	</body>
 
 </html>
