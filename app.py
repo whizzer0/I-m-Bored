@@ -1,5 +1,6 @@
 from flask import Flask, render_template, request
 from api import lookUpEventFul
+from ticketmaster import lookUpTicketmaster
 app = Flask(__name__)
 app.debug = True
 
@@ -13,15 +14,16 @@ def form():
 
 @app.route("/results", methods=["POST"])
 def results():
-	results = lookUpEventFul(request.form["town"])
-	output = ""
+#	results = lookUpEventFul(request.form["town"])
+    results = lookUpTicketmaster(request.form["town"],request.form["date"],request.form["date"],10000)
+#	output = ""
 
-	for event in results.iter('events'):
-		for node in event:
-			output += str(node.tag) + " - " + str(node.attrib) + " - " + str(node.find('title').text)
+ #	for event in results.iter('events'):
+#		for node in event:
+#			output += str(node.tag) + " - " + str(node.attrib) + " - " + str(node.find('title').text)
 
 
-	return render_template("results.html", data=output)
+    return render_template("results.html", data=results)
 	
 if __name__ == "__main__":
     app.run()
