@@ -1,8 +1,7 @@
-<html>
-	<head>
-		<title>Results!</title>
-	</head>
-	<body>
-        <p>{{data}}</p>
-	</body>
-</html>
+{% extends "layout.html" %}
+{% block content %}
+	{% for item in data.events %}
+		<p>{{item["name"]}} - {{item["url"]}}</p>
+
+	{% endfor %}
+{% endblock %}
