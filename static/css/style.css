@@ -26,7 +26,7 @@ h1 {
 	padding-left: 12px;
 	padding-right: 12px;
 	padding-top: 14px;
-	width: 1285px;
+	width: 1385px;
 }
 
 h2 {
@@ -56,17 +56,6 @@ h2 {
 	font-weight: bold;
 	position: relative;
     top: -15px;
-}
-
-.button-success {
-    color: white;
-    border-radius: 4px;
-    text-shadow: 0 1px 1px rgba(0, 0, 0, 0.2);
-    background: #FF5252;
-}
-
-.button-success:hover {
-  background: #
 }
 
 .buttontext {
@@ -99,3 +88,4 @@ h2 {
     border: 0;
     transition: all 0.3s ease 0s;
 }
+

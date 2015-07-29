@@ -19,11 +19,11 @@
     <style scoped>
     </style>
     </div>
-        <br>
-         <form action="#">
-         <p class="buttontext"><label for="pcode">Post code</label> <input type="text" id="pcode" name="pcode" /></p>
-         <form action="#">
-         <p class="buttontext"><label for="town">The town</label> <input type="text" id="town" name="town" /></p>
-         <button class="button">Search!</button>
+    <br>
+    <form action="/results" method="POST">
+    <p class="buttontext"><label for="pcode">Post code</label> <input type="text" name="pcode" /></p>
+    <p class="buttontext"><label for="town">Your town</label> <input type="text" name="town" /></p>
+    <button class="button" type="submit">Search!</button>
+	</form>
 	</body>
 </html>
