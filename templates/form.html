@@ -1,8 +1,9 @@
 <html>
 	<head>
-		<link href='http://fonts.googleapis.com/css?family=Signika+Negative' rel='stylesheet' type='text/css'>
-		<link href='http://fonts.googleapis.com/css?family=Lato:300' rel='stylesheet' type='text/css'>
-		<link rel="stylesheet" type="text/css" href="static/css/style.css">
+		<link href='http://fonts.googleapis.com/css?family=Signika+Negative' rel='stylesheet' type='text/css' />
+		<link href='http://fonts.googleapis.com/css?family=Lato:300' rel='stylesheet' type='text/css' />
+		<link rel="stylesheet" type="text/css" href="static/css/pikaday.css" />
+		<link rel="stylesheet" type="text/css" href="static/css/style.css" />
 	</head>
 	<body>
 	<div class="footer">
@@ -14,17 +15,32 @@
 		</div>
 		<div class="instructions">Instructions</div>
 		<br>
-		<div class="smalltext">Simply enter your postal code and town name and I will show you some awesome events available<br> to you. Don't know your postal code? Enter your address on Google Maps and it'll tell you!</div>
+		<div class="smalltext">Simply enter your town name and I will show you some awesome events available<br> to you. Don't know your postal code? Enter your address on Google Maps and it'll tell you!</div>
 		<div>
     <style scoped>
     </style>
     </div>
     <br>
     <form action="/results" method="POST">
-    <p><label for="pcode">Postal code</label> <input type="text" name="pcode" /></p>
-    <p><label for="town">Your town</label> <input type="text" name="town" /></p>
+    <!--<p><label for="pcode">Postal code</label> <input type="text" name="pcode" /></p>-->
+    <p><label for="town">Town</label> <input type="text" name="town" /></p>
+    <p><label for="datepicker">Date</label>
+    <input type="text" id="datepicker" name="date"></p>
     <button class="buttontext" type="submit">Search for events!</button>
 	</form>
+	<script src="static/js/pikaday.js"></script>
+    <script>
+
+    var picker = new Pikaday(
+    {
+        field: document.getElementById('datepicker'),
+        firstDay: 1,
+        minDate: new Date('2000-01-01'),
+        maxDate: new Date('2020-12-31'),
+        yearRange: [2000,2020]
+    });
+
+    </script>
 	</body>
 
 </html>

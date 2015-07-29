@@ -15,7 +15,6 @@ def form():
 @app.route("/results", methods=["POST"])
 def results():
 #	results = lookUpEventFul(request.form["town"])
-    results = lookUpTicketmaster(request.form["town"],request.form["date"],request.form["date"],10000)
 #	output = ""
 
  #	for event in results.iter('events'):
@@ -23,7 +22,7 @@ def results():
 #			output += str(node.tag) + " - " + str(node.attrib) + " - " + str(node.find('title').text)
 
 
-    return render_template("results.html", data=results)
+    return render_template("results.html", data=request.form["date"])
 	
 if __name__ == "__main__":
     app.run()

@@ -6,6 +6,7 @@
 import requests
 import xml.etree.ElementTree as ET
 from geocode import GeoCode
+import json
 
 def lookUpTicketmaster(location, datefrom, dateto, budget):
 	#declare constants that hold important stuffs
@@ -14,19 +15,19 @@ def lookUpTicketmaster(location, datefrom, dateto, budget):
 	headers = {"Accept": "application/json"}
 
 	#resolve the lat/long from the location. our app only supports the UK, so country is unnecessary
-        geocoded = GeoCode(location, "UnitedKingdom")
+        geocoded = GeoCode(location, "UK")
         latitude = geocoded["lat"]
         longitude = geocoded["lng"]
 	
 	request_parameters = {
-		"app_key": api,
-		"radius": defrange,
+		"apikey": api,
+		"radius": 50,
 		"domain_ids": "unitedkingdom",
 		"lang": "en-us",
-		"latitude": latitude,
-		"longitude": longitude,
-		"eventdate_from": datefrom + "T00:00:00Z",
-		"eventdate_to": dateto + "T00:00:00Z",
+		"lat": latitude,
+		"long": longitude,
+		#"eventdate_from": datefrom + "T00:00:00Z",
+		#"eventdate_to": dateto + "T00:00:00Z",
 		"max_price": budget,
 		"is_seats_available": "true",
 		"is_not_cancelled": "true",
@@ -34,10 +35,11 @@ def lookUpTicketmaster(location, datefrom, dateto, budget):
 		"sort_by": "proximity",
 	}
 	r = requests.get(base_url,params=request_parameters,headers=headers)
-	pyr = r.json()
+	#pyr = r.json()
+	pyr = json.loads(r.text)
 
 	#the following line may strip non-ASCII characters (for XML parser compatibility) and hence may be the cause of some problems with missing characters
-	response = r.text.encode('ascii', 'ignore')
-	root = ET.fromstring(response)
+	#response = r.text.encode('ascii', 'ignore')
+	#root = ET.fromstring(response)
 
-	return root
+	return pyr
