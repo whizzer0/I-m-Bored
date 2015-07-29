@@ -3,6 +3,8 @@
 		<title>Results</title>
 	</head>
 	<body>
-		<p>{{data}}</p>
+		{% for item in data %}
+            <p>{{ item }}</p>
+        {% endfor %}
 	</body>
 </html>

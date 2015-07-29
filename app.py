@@ -15,14 +15,14 @@ def form():
 @app.route("/results", methods=["POST"])
 def results():
 	results = lookUpEventFul(request.form["town"])
-	output = ""
+#	output = ""
 
-	for event in results.iter('events'):
-		for node in event:
-			output += str(node.tag) + " - " + str(node.attrib) + " - " + str(node.find('title').text)
+ #	for event in results.iter('events'):
+#		for node in event:
+#			output += str(node.tag) + " - " + str(node.attrib) + " - " + str(node.find('title').text)
 
 
-	return render_template("results.html", data=output)
+	return render_template("results.html", data=results)
 	
 if __name__ == "__main__":
     app.run()
