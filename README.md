@@ -5,11 +5,13 @@ I'm Bored was/is/will be/might be created for [Young Rewired State 2015](https:/
 
 &lt;marquee&gt;&lt;blink&gt;[Check out our all new wiki!](https://github.com/whizzer0/Im-Bored/wiki)&lt;/blink&gt;&lt;/marquee&gt;
 
-To run use python app.py,
+[##Running](https://github.com/whizzer0/Im-Bored/wiki/I'm-Bored#running)
 
-You need to install flask and requests
+To run, use `python app.py` while in the right directory. See the above-linked wiki page for more detail.
+
+You need to install `flask` and `requests`:
     
-    sudo pip install flask
-    sudo pip install requests
+    `sudo pip install flask`
+    `sudo pip install requests`
     
-You may need to install pip, (ask chris)
+You may need to install pip. Ask Chris.
