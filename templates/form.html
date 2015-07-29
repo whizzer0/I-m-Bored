@@ -6,14 +6,13 @@
 		<h1>Help me, I'm bored!</h1>
 		<div class="instructions">Instructions</div>
 		<br>
-		<div class="smalltext">Simply enter your town name and I will show you some awesome events available<br> to you.</div>
+		<div class="smalltext">Simply enter your town name and I will show you some awesome events available to you.</div>
     <br>
     <form action="/results" method="POST">
     <p><label for="town">Town</label> <input type="text" name="town" /></p>
-    <p><label for="datepicker">Start date </label>
-    <input type="text" id="datepickerfrom" name="datefrom"></p>
-    <p><label for="datepicker">End date</label>
-    <input type="text" id="datepickerto" name="dateto"></p>
+    <p><label for="datepicker">Start date </label> <input type="text" id="datepickerfrom" name="datefrom"></p>
+    <p><label for="datepicker">End date</label> <input type="text" id="datepickerto" name="dateto"></p>
+    <p><label for="town">Budget in £</label> <input type="text" id="budget" name="price"></p>
     <button class="button" type="submit">Go!</button>
 	</form>
 	<script src="static/js/pikaday.js"></script>
