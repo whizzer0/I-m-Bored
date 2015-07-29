@@ -10,16 +10,30 @@
     <br>
     <form action="/results" method="POST">
     <p><label for="town">Town</label> <input type="text" name="town" /></p>
-    <p><label for="datepicker">Date</label>
-    <input type="text" id="datepicker" name="date"></p>
-    <button class="button" type="submit">Search!</button>
+    <p><label for="datepicker">Start date </label>
+    <input type="text" id="datepickerfrom" name="datefrom"></p>
+    <p><label for="datepicker">End date</label>
+    <input type="text" id="datepickerto" name="dateto"></p>
+    <button class="button" type="submit">Go!</button>
 	</form>
 	<script src="static/js/pikaday.js"></script>
     <script>
 
     var picker = new Pikaday(
     {
-        field: document.getElementById('datepicker'),
+        field: document.getElementById('datepickerfrom'),
+        firstDay: 1,
+        minDate: new Date('2000-01-01'),
+        maxDate: new Date('2020-12-31'),
+        yearRange: [2000,2020]
+    });
+
+    </script>
+    <script>
+
+    var picker = new Pikaday(
+    {
+        field: document.getElementById('datepickerto'),
         firstDay: 1,
         minDate: new Date('2000-01-01'),
         maxDate: new Date('2020-12-31'),

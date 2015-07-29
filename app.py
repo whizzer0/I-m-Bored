@@ -15,7 +15,7 @@ def form():
 @app.route("/results", methods=["POST"])
 def results():
 #	results = lookUpEventFul(request.form["town"])
-    results = lookUpTicketmaster(request.form["town"],request.form["date"],request.form["date"],10000)
+    results = lookUpTicketmaster(request.form["town"],request.form["datefrom"],request.form["dateto"],10000)
 #	output = ""
 
  #	for event in results.iter('events'):
