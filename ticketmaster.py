@@ -23,7 +23,7 @@ r = requests.get(url, headers=headers)
 Jason = r.json()
 #print stuff for demo purposes
 #print(Jason)
-print(Jason[u'events'][1][u'name'])
+print(Jason[u'events'][1-4][u'name'])
 
 #Emergency backup everything's-exploding-help URL for demo
 #https://app.ticketmaster.eu/mfxapi/v1/events?apikey=uwmnATt30UNVTSdoNAMg1TTemjPG1BzS&domain_ids=unitedkingdom&lang=en-us&lat=52.478655&long=-1.910211&radius=50&eventdate_from=2015-08-01T00:00:00Z&eventdate_to=2015-09-01T00:00:00Z&max_price=500&is_seats_available=true&is_not_cancelled=true&is_not_package=true&sort_by=proximity

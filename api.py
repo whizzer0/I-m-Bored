@@ -12,7 +12,7 @@ def lookUpEventFul(location):
 	#declaring a new variable that holds the api key above
 	api = 'qgdXKCNgnfsLPLJ7'
 	
-	#we need a variable that holds a string containting the location we want to search from (SEE THE DOCUMENTATION ON THE WEBSITE FOR THE FORMAT)
+	#we need a variable that holds a string containing the location we want to search from (SEE THE DOCUMENTATION ON THE WEBSITE FOR THE FORMAT)
 	#location = 'Norwich, United Kingdom'
 	#we need a variable that holds a integer page_size that is the maximum number of results to be returned
 	result_number = 54
