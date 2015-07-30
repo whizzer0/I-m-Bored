@@ -19,6 +19,7 @@ def formAlt():
 @app.route("/results", methods=["POST"])
 def results():
 #	results = lookUpEventFul(request.form["town"])
+    
     results = lookUpTicketmaster(request.form["town"],request.form["datefrom"],request.form["dateto"],request.form["price"])
 #	output = ""
 
@@ -31,7 +32,7 @@ def results():
     
 @app.route("/results-alt", methods=["POST"])
 def resultsAlt():
-    results = lookUpTicketmaster(request.form["town"],request.form["datefrom"],request.form["dateto"],request.form["price"])
+    results = lookUpTicketmaster(request.form["town"],request.form["datefrom"],request.form["dateto"],request.form["price"],request.form["sortby"])
     return render_template("results-alt.html", data=results)
 	
 if __name__ == "__main__":

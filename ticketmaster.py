@@ -8,7 +8,7 @@ import xml.etree.ElementTree as ET
 from geocode import GeoCode
 import json
 
-def lookUpTicketmaster(location, datefrom, dateto, budget):
+def lookUpTicketmaster(location, datefrom, dateto, budget, sort):
 	#declare constants that hold important stuffs
 	api = "uwmnATt30UNVTSdoNAMg1TTemjPG1BzS"
 	base_url = "https://app.ticketmaster.eu/mfxapi/v1/events"
@@ -32,7 +32,7 @@ def lookUpTicketmaster(location, datefrom, dateto, budget):
 		"is_seats_available": "true",
 		"is_not_canceled": "true",
 		"is_not_package": "true",
-		"sort_by": "eventdate",
+		"sort_by": sort,
 	}
 	r = requests.get(base_url,params=request_parameters,headers=headers)
 	#pyr = r.json()
