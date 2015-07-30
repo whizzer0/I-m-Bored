@@ -31,7 +31,7 @@ def results():
     
 @app.route("/results-alt", methods=["POST"])
 def resultsAlt():
-    results = lookUpTicketmaster(request.formAlt["town"],request.formAlt["datefrom"],request.formAlt["dateto"],request.formAlt["price"])
+    results = lookUpTicketmaster(request.form["town"],request.form["datefrom"],request.form["dateto"],request.form["price"])
     return render_template("results-alt.html", data=results)
 	
 if __name__ == "__main__":
