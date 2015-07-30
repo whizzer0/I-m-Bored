@@ -32,7 +32,7 @@ def lookUpTicketmaster(location, datefrom, dateto, budget):
 		"is_seats_available": "true",
 		"is_not_canceled": "true",
 		"is_not_package": "true",
-		"sort_by": "proximity",
+		"sort_by": "eventdate",
 	}
 	r = requests.get(base_url,params=request_parameters,headers=headers)
 	#pyr = r.json()

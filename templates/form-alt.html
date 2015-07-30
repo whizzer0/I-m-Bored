@@ -9,7 +9,7 @@
   </header>
   <main class="mdl-layout__content">
     <h2>Help me, I'm bored!</h2>
-    <p>Enter your location to see some things to do near you.</p>
+    <p>Enter a few details to see some things to do near you.</p>
     <br>
     <form action="/results-alt" method="POST">
         <label class="mdl-button mdl-js-button mdl-button--icon mdl-js-ripple-effect" for="town">
@@ -40,6 +40,25 @@
             <label class="mdl-textfield__label" for="addr1">End date</label>
             <span class="mdl-textfield__error">Use the YYYY-MM-DD format</span>
         </div></p>
+        <p><label class="mdl-button mdl-js-button mdl-button--icon mdl-js-ripple-effect">
+            <i class="material-icons">sort</i>
+        </label> Sort results</p>
+        <p><label class="mdl-radio mdl-js-radio mdl-js-ripple-effect" for="eventdate">
+            <input checked class="mdl-radio__button" id="eventdate" name="sort" type="radio" value="on">
+            <span class="mdl-radio__label">Date</span>
+        </label></p>
+        <p><label class="mdl-radio mdl-js-radio mdl-js-ripple-effect" for="eventname">
+            <input class="mdl-radio__button" id="eventname" name="sort" type="radio" value="off">
+            <span class="mdl-radio__label">Name</span>
+        </label></p>
+        <p><label class="mdl-radio mdl-js-radio mdl-js-ripple-effect" for="popularity">
+            <input class="mdl-radio__button" id="popularity" name="sort" type="radio" value="auto">
+            <span class="mdl-radio__label">Popularity</span>
+        </label></p>
+        <p><label class="mdl-radio mdl-js-radio mdl-js-ripple-effect" for="proximity">
+            <input class="mdl-radio__button" id="proximity" name="sort" type="radio" value="auto">
+            <span class="mdl-radio__label">Proximity</span>
+        </label></p>
         <button class="mdl-button mdl-js-button mdl-button--fab mdl-js-ripple-effect mdl-button--colored" type="submit">
             <i class="material-icons">search</i>
         </button>
