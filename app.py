@@ -4,13 +4,17 @@ from ticketmaster import lookUpTicketmaster
 app = Flask(__name__)
 app.debug = True
 
-@app.route("/", methods=["GET"])
+@app.route("/example", methods=["GET"])
 def example():
     return render_template("example.html", data=None)
 
-@app.route("/form", methods=["GET"])
+@app.route("/", methods=["GET"])
 def form():
     return render_template("form.html", data=None)
+    
+@app.route("/form-alt", methods=["GET"])
+def formAlt():
+    return render_template("form-alt.html", data=None)
 
 @app.route("/results", methods=["POST"])
 def results():
@@ -24,6 +28,11 @@ def results():
 
 
     return render_template("results.html", data=results)
+    
+@app.route("/results-alt", methods=["POST"])
+def resultsAlt():
+    results = lookUpTicketmaster(request.formAlt["town"],request.formAlt["datefrom"],request.formAlt["dateto"],request.formAlt["price"])
+    return render_template("results-alt.html", data=results)
 	
 if __name__ == "__main__":
     app.run()

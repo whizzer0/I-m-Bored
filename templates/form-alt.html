@@ -1,0 +1,49 @@
+{% extends "layout-md.html" %}
+{% block content %}
+
+<div class="mdl-layout mdl-js-layout">
+  <header class="mdl-layout__header">
+    <div class="mdl-layout__header-row">
+      <span class="mdl-layout-title">I'm Bored</span>
+    </div>
+  </header>
+  <main class="mdl-layout__content">
+    <h2>Help me, I'm bored!</h2>
+    <p>Enter your location to see some things to do near you.</p>
+    <br>
+    <form action="/results" method="POST">
+        <label class="mdl-button mdl-js-button mdl-button--icon mdl-js-ripple-effect" for="town">
+            <i class="material-icons">location_city</i>
+        </label>
+        <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
+            <input class="mdl-textfield__input" type="text" id="town" name="town" />
+            <label class="mdl-textfield__label" for="addr1">Location</label>
+        </div></p>
+        <label class="mdl-button mdl-js-button mdl-button--icon mdl-js-ripple-effect" for="budget">
+            <i class="material-icons">attach_money</i>
+        </label>
+        <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
+            <input class="mdl-textfield__input" type="text" id="budget" pattern="-?[0-9]*(\.[0-9]+)?" name="price" />
+            <label class="mdl-textfield__label" for="addr1">Budget in £</label>
+            <span class="mdl-textfield__error">Enter a number</span>
+        </div></p>
+        <label class="mdl-button mdl-js-button mdl-button--icon mdl-js-ripple-effect" for="datepickerfrom">
+            <i class="material-icons">access_time</i>
+        </label>
+        <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
+            <input class="mdl-textfield__input" type="text" id="datepickerfrom" pattern="(?:19|20)[0-9]{2}-(?:(?:0[1-9]|1[0-2])-(?:0[1-9]|1[0-9]|2[0-9])|(?:(?!02)(?:0[1-9]|1[0-2])-(?:30))|(?:(?:0[13578]|1[02])-31))" name="datefrom" />
+            <label class="mdl-textfield__label" for="addr1">Start date</label>
+            <span class="mdl-textfield__error">Use the YYYY-MM-DD format</span>
+        </div>
+        <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
+            <input class="mdl-textfield__input" type="text" id="datepickerto" pattern="(?:19|20)[0-9]{2}-(?:(?:0[1-9]|1[0-2])-(?:0[1-9]|1[0-9]|2[0-9])|(?:(?!02)(?:0[1-9]|1[0-2])-(?:30))|(?:(?:0[13578]|1[02])-31))" name="dateto" />
+            <label class="mdl-textfield__label" for="addr1">End date</label>
+            <span class="mdl-textfield__error">Use the YYYY-MM-DD format</span>
+        </div></p>
+        <button class="mdl-button mdl-js-button mdl-button--fab mdl-js-ripple-effect mdl-button--colored" type="submit">
+            <i class="material-icons">search</i>
+        </button>
+	    </form>
+  </main>
+</div>
+{% endblock %}
