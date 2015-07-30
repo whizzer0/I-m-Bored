@@ -1,20 +1,54 @@
 {% extends "layout-md.html" %}
 {% block content %}
+    <style>
+    .demo-card-event.mdl-card {
+        height: auto;
+        width: auto;
+        display: flex;
+        flex-direction: column;
+    }
+    
+    .demo-card-event.mdl-card > * {
+        height: auto;
+        width: auto;
+    }
+
+    .demo-card-event > .mdl-card__title {
+        align-items: flex-start;
+    }
+
+    .demo-card-event > .mdl-card__actions {
+        display: flex;
+        box-sizing: border-box;
+        align-items: center;
+    }
+    </style>
     <div class="mdl-layout">
         <header class="mdl-layout__header">
             <div class="mdl-layout__header-row">
-                <span class="mdl-layout-title">I'm Bored</span>
+                <span class="mdl-layout-title">Search results</span>
             </div>
         </header>
         <main class="mdl-layout__content">
+            <div class="demo-card-event mdl-cell">
 	        {% for item in data.events %}
-	            <p><div class="mdl-card mdl-shadow--2dp demo-card-event">
+	            <p><div class="mdl-card mdl-shadow--2dp mdl-cell demo-card-event">
                     <div class="mdl-card__title">
                         <h1 class="mdl-card__title-text">
                             {{item["name"]}}
                         </h1>
                     </div>
-                    
+                    <div class="mdl-card__supporting-text">
+                        {% for categ in item.categories %}
+                            <!--<i class="material-icons">sort</i>--> Category: {{categ["name"]}}<br />
+                        {% endfor %}
+                        {% for subcat in item.categories.subcategories %}
+                            <!--<i class="material-icons">folder_special</i>--> Subcategory: {{subcat["name"]}}<br />
+                        {% endfor %}
+                        <!--<i class="material-icons">access_time</i>--> Date and time: {{item.eventdate["value"]}}<br />
+                        <!--<i class="material-icons">place</i>--> Venue: {{item.venue["name"]}}<br />
+                        <!--<i class="material-icons">attach_money</i>--> Price: From £{{item.price_ranges.including_ticket_fees["min"]}}<br />
+                    </div>
                     <div class="mdl-card__actions mdl-card--border">
                         <a class="mdl-button mdl-button--colored mdl-js-button mdl-js-ripple-effect" href="{{item["url"]}}">
                             Purchase Tickets
@@ -24,6 +58,7 @@
                     </div>
                 </div></p>
 	        {% endfor %}
+	        </div>
 	    </main>
 	</div>
 {% endblock %}

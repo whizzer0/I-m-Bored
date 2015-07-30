@@ -30,7 +30,7 @@ def lookUpTicketmaster(location, datefrom, dateto, budget):
 		"eventdate_to": dateto + "T00:00:00Z",
 		"max_price": budget,
 		"is_seats_available": "true",
-		"is_not_cancelled": "true",
+		"is_not_canceled": "true",
 		"is_not_package": "true",
 		"sort_by": "proximity",
 	}
