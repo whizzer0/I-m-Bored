@@ -3,14 +3,12 @@
     <style>
     .demo-card-event.mdl-card {
         height: auto;
-        width: auto;
         display: flex;
         flex-direction: column;
     }
     
     .demo-card-event.mdl-card > * {
         height: auto;
-        width: auto;
     }
 
     .demo-card-event > .mdl-card__title {
@@ -21,19 +19,27 @@
         display: flex;
         box-sizing: border-box;
         align-items: center;
+        position: absolute;
+        bottom: 0;
     }
+    
+    .demo-card-event > .mdl-cell--4-col {
+        margin-bottom: 8px
+    }
+    
     </style>
     <div class="mdl-layout">
         <header class="mdl-layout__header">
+            <div class="mdl-layout-icon"><a href="/form-alt" style="color: #FFFFFF; opacity: 0.87"><label class="mdl-button mdl-js-button mdl-button--icon mdl-js-ripple-effect"><i class="material-icons">arrow_back</i></label></a></div>
             <div class="mdl-layout__header-row">
-                <span class="mdl-layout-title">Search results</span>
+                <span class="mdl-layout-title">Results</span>
             </div>
         </header>
         <main class="mdl-layout__content">
-            <div class="demo-card-event mdl-cell">
+            <div class="demo-card-event mdl-grid">
 	        {% for item in data.events %}
-	            <p><div class="mdl-card mdl-shadow--2dp mdl-cell demo-card-event">
-                    <div class="mdl-card__title">
+	            <p><div class="mdl-card mdl-shadow--2dp mdl-cell--4-col demo-card-event">
+                    <div class="mdl-card__title demo-card-event">
                         <h1 class="mdl-card__title-text">
                             {{item["name"]}}
                         </h1>
@@ -50,13 +56,14 @@
                         <!--<i class="material-icons">attach_money</i>--> Price: From £{{item.price_ranges.including_ticket_fees["min"]}}<br />
                     </div>
                     <div class="mdl-card__actions mdl-card--border">
-                        <a class="mdl-button mdl-button--colored mdl-js-button mdl-js-ripple-effect" href="{{item["url"]}}">
+                        <a class="mdl-button mdl-button--colored mdl-js-button mdl-js-ripple-effect" href="{{item['url']}}">
                             Purchase Tickets
                         </a>
                         <div class="mdl-layout-spacer"></div>
                         <i class="material-icons">shopping_basket</i>
                     </div>
                 </div></p>
+                <div class="mdl-layout-spacer"></div>
 	        {% endfor %}
 	        </div>
 	    </main>

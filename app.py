@@ -1,6 +1,7 @@
 from flask import Flask, render_template, request
 from api import lookUpEventFul
 from ticketmaster import lookUpTicketmaster
+from cinema import lookUpCinema
 app = Flask(__name__)
 app.debug = True
 
@@ -33,6 +34,8 @@ def results():
 @app.route("/results-alt", methods=["POST"])
 def resultsAlt():
     results = lookUpTicketmaster(request.form["town"],request.form["datefrom"],request.form["dateto"],request.form["price"],request.form["sortby"])
+    #cinemas = lookUpCinema(request.form["postcode"],True)
+    #listings = lookUpCinema(request.form["postcode"],False)
     return render_template("results-alt.html", data=results)
 	
 if __name__ == "__main__":

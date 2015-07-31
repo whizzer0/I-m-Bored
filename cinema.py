@@ -18,9 +18,10 @@ def lookUpCinema(postcode,justCinemas):
     
     #second part - find the actual listings at those cinemas
     if not justCinemas:
-        i = 0
-        while i < len(pyro):
-            url = "http://moviesapi.herokuapp.com/cinemas/" + pyro[i][u"venue_id"] + "/showings"
+        for i in pyro:
+            print pyro
+            print i
+            url = "http://moviesapi.herokuapp.com/cinemas/" + i[u"venue_id"] + "/showings"
             r = requests.get(url)
             pyr = r.json()
             full[i] = pyr
@@ -35,5 +36,3 @@ def lookUpCinema(postcode,justCinemas):
     #the following line may strip non-ASCII characters (for XML parser compatibility) and hence may be the cause of some problems with missing characters
     #response = r.text.encode('ascii', 'ignore')
     #root = ET.fromstring(response)
-
-print(lookUpCinema("NR18 0NT",True))
