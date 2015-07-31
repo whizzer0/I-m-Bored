@@ -18,17 +18,16 @@ def lookUpCinema(postcode,justCinemas):
     
     #second part - find the actual listings at those cinemas
     if not justCinemas:
+        b = 0
         for i in pyro:
-            print pyro
-            print i
             url = "http://moviesapi.herokuapp.com/cinemas/" + i[u"venue_id"] + "/showings"
             r = requests.get(url)
             pyr = r.json()
-            full[i] = pyr
+            full[b] = (pyr)
             #print(url) #debuggin'
             #print("") #debugging...
             #print(pyr) #everything's debugging...
-            i = i + 1
+            b = b + 1
             return full
     else:
         return pyro

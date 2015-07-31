@@ -2,7 +2,7 @@
 {% block content %}
     <style>
     .demo-card-event.mdl-card {
-        height: auto;
+
         display: flex;
         flex-direction: column;
     }
@@ -24,7 +24,7 @@
     }
     
     .demo-card-event > .mdl-cell--4-col {
-        margin-bottom: 8px
+        margin-bottom: 16px
     }
     
     </style>
@@ -36,6 +36,7 @@
             </div>
         </header>
         <main class="mdl-layout__content">
+            <h2>Events</h2>
             <div class="demo-card-event mdl-grid">
 	        {% for item in data.events %}
 	            <p><div class="mdl-card mdl-shadow--2dp mdl-cell--4-col demo-card-event">
@@ -66,6 +67,31 @@
                 <div class="mdl-layout-spacer"></div>
 	        {% endfor %}
 	        </div>
+	        <h2>Cinemas</h2>
+	        {% for cinema in dataCinema %}
+	            <h3>{{cinema["title"]}}</h3>
+	                {% for movies in dataListing %}
+	                <p><div class="mdl-card mdl-shadow--2dp mdl-cell--4-col demo-card-event">
+	                    <div class="mdl-card__title demo-card-event">
+                            <h1 class="mdl-card__title-text">
+                                {{movies["title"]}}
+                            </h1>
+                        </div>
+                        <div class="mdl-card__supporting-text">
+                            {% for times in movies.categories %}
+                                Time: {{times["time"]}}<br />
+                            {% endfor %}
+                        </div>
+                        <div class="mdl-card__actions mdl-card--border">
+                            <a class="mdl-button mdl-button--colored mdl-js-button mdl-js-ripple-effect" href="{{cinema['link']}}{{movies['url']}}">
+                                Purchase Tickets
+                            </a>
+                            <div class="mdl-layout-spacer"></div>
+                            <i class="material-icons">local_movies</i>
+                        </div>
+	                </div></p>
+	                {% endfor %}
+	        {% endfor %}
 	    </main>
 	</div>
 {% endblock %}
