@@ -31,15 +31,15 @@ def results():
 
     return render_template("results.html", data=results)
     
-@app.route("/results-alt", methods=["POST"])
+@app.route("/results-alt", methods=["GET"])
 def resultsAlt():
-    results = lookUpTicketmaster(request.form["town"],request.form["datefrom"],request.form["dateto"],request.form["price"],request.form["sortby"])
-    if not request.form["postcode"] == "":
-        cinemas = lookUpCinema(request.form["postcode"],True)
-        listings = lookUpCinema(request.form["postcode"],False)
-        return render_template("results-alt.html", data=results, dataCinema=cinemas, dataListing=listings)
-    else:
-        return render_template("results-alt.html", data=results)
+    #results = lookUpTicketmaster(request.form["town"],request.form["datefrom"],request.form["dateto"],request.form["price"],request.form["sortby"])
+    #if not request.form["postcode"] == "":
+        #cinemas = lookUpCinema(request.form["postcode"],True)
+        #listings = lookUpCinema(request.form["postcode"],False)
+        #return render_template("results-alt.html", data=results, dataCinema=cinemas, dataListing=listings)
+    #else:
+        return render_template("results-alt.html")
 	
 if __name__ == "__main__":
     app.run()
