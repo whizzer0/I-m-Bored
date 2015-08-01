@@ -18,6 +18,7 @@ def lookUpTicketmaster(location, datefrom, dateto, budget, sort):
         geocoded = GeoCode(location, "UK")
         latitude = geocoded["lat"]
         longitude = geocoded["lng"]
+        #print(str(latitude) + ", " + str(longitude))
 	
 	request_parameters = {
 		"apikey": api,
